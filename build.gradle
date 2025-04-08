@@ -29,3 +29,15 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+bootRun {
+    doFirst {
+        if (System.getProperty('os.name').toLowerCase().contains('windows')) {
+            println 'Killing any process using port 8081...'
+            "cmd /c for /f \"tokens=5\" %a in ('netstat -aon ^| find \":8081\"') do taskkill /F /PID %a".execute()
+        } else {
+            println 'Killing any process using port 8081...'
+            "bash -c 'lsof -ti :8081 | xargs kill -9'".execute()
+        }
+    }
+}
