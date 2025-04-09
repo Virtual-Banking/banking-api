@@ -1,4 +1,5 @@
 package com.bankingapp.dto;
+
 import lombok.Data;
 
 @Data

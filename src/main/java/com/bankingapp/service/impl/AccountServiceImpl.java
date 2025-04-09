@@ -23,5 +23,16 @@ public class AccountServiceImpl implements AccountService{
         
         return accountRepository.findById(id).orElseThrow();
     }
+
+    @Override
+    public Account findByAccountNumber(Long accountNumber) {
+        return accountRepository.findByAccountNumber(accountNumber)
+                .orElseThrow(() -> new RuntimeException("Account not found"));
+    }
+
+    @Override
+    public void save(Account account) {
+        accountRepository.save(account);
+    }
     
 }

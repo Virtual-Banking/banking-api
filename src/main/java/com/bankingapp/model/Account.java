@@ -19,11 +19,13 @@ public class Account {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private Long accountNumber;
+
     @ManyToOne
     private Customer customer;
 
     private Double balance;
 
     @Enumerated(EnumType.STRING)
-    private AccountStatus status = AccountStatus.ACTIVE;
+    private AccountStatus status;
 }
