@@ -15,6 +15,8 @@ public class NotificationServiceImpl implements NotificationService{
         // message.setSubject("Transfer Alert");
         // message.setText("An amount of " + amount + " has been debited from your account.");
         // mailSender.send(message);
+
+        System.out.println("Transfer Sent!");
     }
     
 }
