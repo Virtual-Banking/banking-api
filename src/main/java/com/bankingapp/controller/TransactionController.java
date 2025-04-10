@@ -21,7 +21,7 @@ import com.bankingapp.service.TransactionService;
 @RequestMapping("/transactions")
 public class TransactionController {
     
-     @Autowired
+    @Autowired
     private TransactionService transactionService;
 
     @GetMapping

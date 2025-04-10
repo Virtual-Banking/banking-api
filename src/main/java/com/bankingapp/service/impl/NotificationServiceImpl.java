@@ -1,9 +1,11 @@
 package com.bankingapp.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.bankingapp.service.NotificationService;
 
+@Service
 public class NotificationServiceImpl implements NotificationService{
 
     // @Autowired

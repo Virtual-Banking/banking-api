@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.stereotype.Service;
 
 import com.bankingapp.dto.TransactionEvent;
 import com.bankingapp.dto.TransferRequest;
@@ -19,7 +20,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import jakarta.transaction.Transactional;
 
-
+@Service
 public class TransactionServiceImpl implements TransactionService{
 
     @Autowired

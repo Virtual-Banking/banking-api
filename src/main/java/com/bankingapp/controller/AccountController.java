@@ -16,6 +16,7 @@ import com.bankingapp.service.AccountService;
 @RestController
 @RequestMapping("/accounts")
 public class AccountController {
+
     @Autowired
     private AccountService accountService;
 

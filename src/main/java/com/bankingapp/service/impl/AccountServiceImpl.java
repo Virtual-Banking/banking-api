@@ -3,11 +3,13 @@ package com.bankingapp.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.bankingapp.model.Account;
 import com.bankingapp.repository.AccountRepository;
 import com.bankingapp.service.AccountService;
 
+@Service
 public class AccountServiceImpl implements AccountService{
 
     @Autowired
