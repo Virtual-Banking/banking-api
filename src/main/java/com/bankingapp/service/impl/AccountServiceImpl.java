@@ -33,7 +33,7 @@ public class AccountServiceImpl implements AccountService{
     }
 
     @Override
-    public void save(Account account) {
+    public void saveAccount(Account account) {
         accountRepository.save(account);
     }
     

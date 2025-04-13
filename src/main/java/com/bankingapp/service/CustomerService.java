@@ -6,8 +6,12 @@ import com.bankingapp.model.Customer;
 
 public interface CustomerService {
 
-    Customer getUserById(Long id);
+    Customer getCustomerById(Long id);
 
-    List<Customer> getAllUsers();
+    List<Customer> getAllCustomers();
+
+    boolean existsByUsername(String username);
+
+    Customer saveCustomer(Customer user);
     
 }

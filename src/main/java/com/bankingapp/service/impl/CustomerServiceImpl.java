@@ -15,14 +15,26 @@ public class CustomerServiceImpl implements CustomerService{
     private CustomerRepository customerRepository;
 
     @Override
-    public Customer getUserById(Long id) {
+    public Customer getCustomerById(Long id) {
         
         return customerRepository.findById(id).orElseThrow();
     }
 
     @Override
-    public List<Customer> getAllUsers() {
+    public List<Customer> getAllCustomers() {
         return customerRepository.findAll();
     }
+
+    @Override
+    public boolean existsByUsername(String username) {
+        return customerRepository.findByUsername(username).isPresent();
+    }
+
+    @Override
+    public Customer saveCustomer(Customer user) {
+        return customerRepository.save(user);
+    }
+
+    
     
 }

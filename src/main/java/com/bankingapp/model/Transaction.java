@@ -13,8 +13,8 @@ public class Transaction {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long fromAccount;
-    private Long toAccount;
+    private String fromAccount;
+    private String toAccount;
     private Double amount;
     private String type;
     private LocalDateTime timestamp;

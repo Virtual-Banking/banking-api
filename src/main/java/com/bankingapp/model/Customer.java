@@ -3,6 +3,8 @@ package com.bankingapp.model;
 import java.util.List;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -21,7 +23,11 @@ public class Customer {
     private String name;
     private String username;
     private String password;
-    private String role;
+    private String address;
+    private String email;
+
+    @Enumerated(EnumType.STRING)
+    private UserType role;
 
     @OneToMany(mappedBy = "customer")
     private List<Account> accounts;

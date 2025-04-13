@@ -61,11 +61,11 @@ public class TransactionServiceImpl implements TransactionService{
         from.setBalance(from.getBalance() - request.getAmount());
         to.setBalance(to.getBalance() + request.getAmount());
 
-        accountService.save(from);
-        accountService.save(to);
+        accountService.saveAccount(from);
+        accountService.saveAccount(to);
 
         Transaction txn = new Transaction();
-        txn.setFromAccount(from.getAccountNumber());
+        txn.setFromAccount(from.getAccountNumber().toString());
         txn.setToAccount(to.getAccountNumber());
         txn.setAmount(request.getAmount());
         txn.setTimestamp(LocalDateTime.now());
