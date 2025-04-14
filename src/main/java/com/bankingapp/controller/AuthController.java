@@ -9,9 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bankingapp.dto.SignupRequest;
 import com.bankingapp.dto.SignupResponse;
-import com.bankingapp.model.Customer;
 import com.bankingapp.service.AuthService;
-import com.bankingapp.service.CustomerService;
 
 import jakarta.validation.Valid;
 
@@ -20,7 +18,7 @@ import jakarta.validation.Valid;
 public class AuthController {
 
     @Autowired
-    private static AuthService authService;
+    private AuthService authService;
 
     @PostMapping("/signup")
     public ResponseEntity<SignupResponse> registerUser(@RequestBody @Valid SignupRequest request) {

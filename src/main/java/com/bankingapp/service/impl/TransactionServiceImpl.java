@@ -44,9 +44,9 @@ public class TransactionServiceImpl implements TransactionService{
     }
 
     @Override
-    public List<Transaction> getTransactionsByAccount(Long accountId) {
+    public List<Transaction> getTransactionsByAccount(String accountFrom) {
         
-        return transactionRepository.findByFromAccountOrToAccount(accountId, accountId);
+        return transactionRepository.findByFromAccount(accountFrom);
     }
 
     @Transactional

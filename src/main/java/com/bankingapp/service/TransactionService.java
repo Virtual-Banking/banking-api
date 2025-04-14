@@ -7,7 +7,7 @@ import com.bankingapp.model.Transaction;
 
 public interface TransactionService {
     List<Transaction> getAllTransactions();
-    List<Transaction> getTransactionsByAccount(Long accountId);
+    List<Transaction> getTransactionsByAccount(String accountFrom);
     void transferFunds(TransferRequest request);
 }
 

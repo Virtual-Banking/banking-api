@@ -30,8 +30,8 @@ public class TransactionController {
     }
 
     @GetMapping("/account/{accountId}")
-    public ResponseEntity<List<Transaction>> getTransactionsByAccount(@PathVariable Long accountId) {
-        return ResponseEntity.ok(transactionService.getTransactionsByAccount(accountId));
+    public ResponseEntity<List<Transaction>> getTransactionsByAccount(@PathVariable String accountFrom) {
+        return ResponseEntity.ok(transactionService.getTransactionsByAccount(accountFrom));
     }
 
     @PostMapping("/transfer")

@@ -3,7 +3,6 @@ package com.bankingapp.service.impl;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -12,8 +11,6 @@ import com.bankingapp.dto.SignupResponse;
 import com.bankingapp.model.Account;
 import com.bankingapp.model.Customer;
 import com.bankingapp.model.UserType;
-import com.bankingapp.repository.AccountRepository;
-import com.bankingapp.repository.CustomerRepository;
 import com.bankingapp.service.AccountService;
 import com.bankingapp.service.AuthService;
 import com.bankingapp.service.CustomerService;
@@ -21,13 +18,13 @@ import com.bankingapp.service.CustomerService;
 @Service
 public class AuthServiceImpl implements AuthService{
     @Autowired
-    private static CustomerService userService;
+    private CustomerService userService;
 
     @Autowired
-    private static AccountService accountService;
+    private AccountService accountService;
 
     @Autowired
-    private static PasswordEncoder passwordEncoder;
+    private PasswordEncoder passwordEncoder;
 
     @Override
     public SignupResponse registerUser(SignupRequest request) {
