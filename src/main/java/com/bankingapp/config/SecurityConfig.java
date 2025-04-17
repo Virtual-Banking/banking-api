@@ -15,8 +15,7 @@ public class SecurityConfig {
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/auth/signup").permitAll()
                 .anyRequest().authenticated()
-            )
-            .httpBasic(); // or formLogin(), or JWT config
+            ).httpBasic(httpBasic -> {}); // or formLogin(), or JWT config
 
         return http.build();
     }

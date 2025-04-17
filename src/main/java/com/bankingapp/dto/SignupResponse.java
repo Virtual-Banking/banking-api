@@ -15,4 +15,5 @@ public class SignupResponse {
     private String address;
     private String accountNumber;
     private Double initialBalance;
+    private String currency;
 }

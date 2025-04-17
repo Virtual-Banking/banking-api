@@ -28,4 +28,7 @@ public class Account {
 
     @Enumerated(EnumType.STRING)
     private AccountStatus status;
+
+    @Enumerated(EnumType.STRING)
+    private Currency currency;
 }

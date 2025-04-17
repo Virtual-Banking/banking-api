@@ -23,4 +23,7 @@ public class SignupRequest {
 
     private Double initialBalance = 0.0;
 
+    @NotBlank(message="Country is required")
+    private String country;
+
 }

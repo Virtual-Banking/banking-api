@@ -2,6 +2,7 @@ package com.bankingapp.service.impl;
 
 import java.util.UUID;
 
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.bankingapp.dto.SignupRequest;
 import com.bankingapp.dto.SignupResponse;
 import com.bankingapp.model.Account;
+import com.bankingapp.model.Currency;
 import com.bankingapp.model.Customer;
 import com.bankingapp.model.UserType;
 import com.bankingapp.service.AccountService;
@@ -45,6 +47,19 @@ public class AuthServiceImpl implements AuthService{
         account.setAccountNumber("ACC" + UUID.randomUUID().toString().substring(0, 8));
         account.setBalance(request.getInitialBalance());
         account.setCustomer(user);
+        
+        //Set Currency
+        if(request.getCountry().equalsIgnoreCase("United States"))
+        account.setCurrency(Currency.USD);
+        else if(request.getCountry().equalsIgnoreCase("India"))
+        account.setCurrency(Currency.INR);
+        else if(request.getCountry().equalsIgnoreCase("Japan"))
+        account.setCurrency(Currency.JPY);
+        else{
+            System.out.println("Invalid currency");
+            return null;
+        }
+
         accountService.saveAccount(account);
 
         return 
@@ -55,7 +70,8 @@ public class AuthServiceImpl implements AuthService{
                 user.getEmail(),
                 user.getAddress(),
                 account.getAccountNumber(),
-                account.getBalance()
+                account.getBalance(),
+                account.getCurrency().toString()
             );
     }
     
